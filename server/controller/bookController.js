@@ -14,5 +14,6 @@ module.exports = {
             res.status(200).send(response.data.items)
         }).catch((err) => console.log(err))
         
-    }
+    },
+    
 }

@@ -1,15 +1,19 @@
+
 const express = require('express') //built web server using express
-const axios = require('axios')
 const cors = require('cors')
 const path = require('path')
 const app = express() // invoke express() and save it in app
-
-app.use(express.json())
-app.use(cors())
-app.use(express.static('public'))
-
+const corsOptions = {
+    exposedHeaders: 'Authorization',
+  };
+const { seed } = require('./controller/db/seed')
+const { addBook } = require('./controller/db/bookDB')
 const {searchBook} = require('./controller/bookController')
 
+
+app.use(express.json())
+app.use(cors(corsOptions))
+app.use(express.static('public'))
 
 
 app.get('/', (req, res) => {
@@ -19,8 +23,14 @@ app.get('/', (req, res) => {
 app.get('/api/books/q', searchBook)
 
 
+//seed endpoint
+//Seed database
+app.post('/api/seed', seed)
+app.post('/api/books/:id', addBook); 
+
 app.listen(5500, () => {
-    console.log(`Server is running on 5500`)
+    console.log(`Server is running on 5500`
+    )
 })
 
 
