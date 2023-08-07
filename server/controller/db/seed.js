@@ -12,16 +12,17 @@ const sequelize = new Sequelize(CONNECTION_STRING, {
 })
 
 module.exports = {
-    seed:(req,res) => {
-        sequelize.query(`
+    seed: (req,res) => {
+     sequelize.query(`
         drop table if exists book_list;
-            create table bookList(
+            create table book_List(
                 book_id serial primary key,
-                image varchar,
-                title varchar not null,
-                authors varchar not null
-            )
-          `).then(dbRes => res.sendStatus(200))
-            .catch(err => res.status(400).send(err))
+                title varchar not null
+             )
+          `).then(() => {
+              console.log(`database table in seed file`)
+              res.sendStatus(200)
+          })
+            .catch(err => console.log('error seeding DB', err))
     }
 }

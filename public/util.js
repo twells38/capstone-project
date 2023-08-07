@@ -1,8 +1,4 @@
-
-
-//const display_Section = document.getElementById('displayScetion')
-
-
+const displayBooks = document.getElementById('display-list')
 
 //create displayCard()
 const displayCard = (bookArr) => { 
@@ -11,20 +7,19 @@ const displayCard = (bookArr) => {
       let displayDiv = document.createElement("div");
       displayDiv.classList.add("card");
       displayDiv.style.width = "18rem";
-      let bookObj = JSON.stringify({ ...book }).replace(
+      let bookObj = JSON.stringify({ ...book }).replace( //convert array object to string
        /[\/\(\)\']/g,
        "&apos;"
      );
       console.log(bookObj);
-       
+     let isbn = book.volumeInfo.industryIdentifiers[0].type +"-"+ book.volumeInfo.industryIdentifiers[0].identifier
      let image = book.volumeInfo.imageLinks&&book.volumeInfo.imageLinks.smallThumbnail
       displayDiv.innerHTML = `
          <div class="card-body bg-light">
          <img class="bookImg"src=${image}>
         <h5 class="card-title mt-3 fw-bold">${book.volumeInfo.title}</h5>
-        <h5>${book.volumeInfo.authors}</h5>
-         <a href='readingLog.html' class='logBtn'onclick='addToLog(${bookObj})'>Add to Reading-Log</a>
-
+        <h5>Author: ${book.volumeInfo.authors}</h5>
+        <h5>${isbn}
         </div>
         `;
       display_Section.appendChild(displayDiv);
@@ -32,26 +27,25 @@ const displayCard = (bookArr) => {
 }
 
 const bookList = (bookArr) => {
-   console.log(bookArr)
+    console.log(bookArr)
     bookArr.map((book) => {
       let displayDiv = document.createElement("div");
       displayDiv.classList.add("card");
-      displayDiv.style.width = "18rem";
-      let bookObj = JSON.stringify({ ...book }).replace(
-       /[\/\(\)\']/g,
-       "&apos;"
-     );
-      console.log(bookObj);
-       
-     let image = book.volumeInfo.imageLinks&&book.volumeInfo.imageLinks.smallThumbnail
+      displayDiv.style.width = "22rem";
       displayDiv.innerHTML = `
-         <div class="card-body bg-light">
-         <img class="bookImg"src=${image}>
-        <h5 class="card-title mt-3 fw-bold">${book.volumeInfo.title}</h5>
-        <h5>${book.volumeInfo.authors}</h5>
-      </div>
+         <div class="card-body bg-light d-flex flex-row  ">
+        
+         <h4 class="card-title fw-bold  text-uppercase text-right mx-auto">${book.title}</h4>
+         <div class='align-items-center '>
+         <a onclick='removeBook(${book['book_id']})'class='pe-auto' > 
+        <i class="fa-regular fa-trash-can "></i>
+        </a>
+         </div>
+         
+        </div>
         `;
-      display_Section.appendChild(displayDiv);
+      displayBooks.appendChild(displayDiv);
     });
 }
-bookList()
+
+
