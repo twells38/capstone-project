@@ -8,65 +8,57 @@
     font-family: 'Raleway', sans-serif;
 }
 :root{
-    --primary-color: rgb(168, 178, 213);
+    --primary-color: #9198e5;
+;
     --secondary-color: rgb(39, 34, 28);
 }
 body{
-    background-color: var(--primary-color);
+    margin: 0;
 }
+
 html{
     font-size: 75.5%;
+    height: 100%;
 }
 nav{
     background-color: rgb(248, 241, 232);
 }
 nav img{
     width: 35px;
-    margin-left: 20px;
-    
-    
-}
-.navbar-collapse ul{
-    margin-left: auto;
-    margin-right: auto;
    
 }
 .navbar li a{
-   font-weight: 700;
+    font-weight: 700;
     margin: 0 2rem;
     font-size: 15px;
 }
 
 
 .header{
+    display: flex;
+    flex-direction: column;
     width: 100%;
     height: 500px;
     color: var(--secondary-color);
     box-shadow:  0 5px 10px var(--secondary-color);
     position: relative;
-}
-
-.row1{
-    display: flex;
-    flex-direction: column;
-    position: relative;
     align-items: center;
-    
 }
 .row1 h2{
     font-size: 2.5rem;
-    margin-bottom: 15px;
-    margin-top: 15px;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    text-align: center;
 }
 .row2{
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 .row2 img{
-    width: 10%;
+    max-width: 150px;
     margin-top: 30px;
-    margin-left: auto;
-    margin-right: auto;
+    
 }
 .row2 h1{
     color: var(--secondary-color);
@@ -87,13 +79,17 @@ nav img{
     padding: 0 0.5rem;
     font-size: 15px;
     font-weight: bold;
+    
+}
+.input-container{
+    margin: auto;
 }
 .search button{
     outline:none;
     border: none;
     height: 35px;
     position: relative;
-    left: -3px;
+    left: -2px;
     top: -2px;
     cursor: pointer;
 }
@@ -102,11 +98,12 @@ nav img{
     font-size: 20px;
     
 }
-
-
 .card{
-    margin: 3rem;
+   margin: 5rem;;
+    
 }
+
+
 .bookImg{
     width: 150px;
     height: 180px;
@@ -115,11 +112,7 @@ nav img{
     margin-right: auto;
     margin-top:10px;
 }
-.card-body{
-    transition: .5s;
-    display: flex;
-    flex-direction: column;
-}
+
 /*.card-body:hover{
     transform: scale(0.9);
     background-color: rgba(255,255,255,0.8);
@@ -128,6 +121,63 @@ nav img{
     cursor: pointer;
     font-size: 1.2rem;
     color:red
+    
+}
+.book-worm{
+    width: 50px;
+}
+section #displaySection{
+    position: relative;
+    min-height: 100%;
+    margin-bottom: 2rem;
+}
+section #display-list{
+    margin-top: 4rem;
+}
+
+.footer{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    font-size: 1.1rem;
+}
+.footer-log{
+   position: fixed;  
+   right: 0;
+    bottom: 0;
+    left: 0;
+    font-size: 1.2rem;
+    background-color:white ;
+}
+
+
+
+@media only screen and (max-width:768px){
+    
+    .header input{
+        width: 200px;
+    }
+    .header .row2 img{
+        width: 18%;
+    }
+    .header .row2 h1{
+        padding: 0 15px;
+    }
+    .card{
+        margin: auto;
+    }
+    #displaySection .card{
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        
+        
+    }
+    #display-list .card-log{
+        margin: auto;
+        max-width: 27rem;
+    }
+    
     
 }
 

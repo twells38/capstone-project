@@ -8,29 +8,24 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>Kid Reading Challenge</title>
 </head>
-<body>
+<body style="background-color: var(--primary-color);">
   <nav class="navbar navbar-expand-lg navbar-light ">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    <div class="collapse navbar-collapse d-flex" id="navbarTogglerDemo01">
       <a class="navbar-brand" href="./index.html">
-        <img src="./images/book.png" alt="">
+        <img class="mx-2" src="./images/book.png" alt="">
       </a>
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
+      <ul class="navbar-nav mx-auto ">
+        <li class="nav-item  ">
           <a class="nav-link active" aria-current="page" href="index.html">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="readingLog.html">Reading-Log</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link "href="#">Log In</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link"href="#">Register</a>
-        </li>
+       
       </ul>
      
     </div>
@@ -44,10 +39,10 @@
     <form class="search " id="search-form">
         <input type="search" placeholder="Search your Book" aria-label="search" id="search-input">
         <button type="submit" class="btn btn-outline-success"><i class="fa-solid fa-search"></i></button>
-    </form>
-    <form class="search" id="book-form">
+      </form>
+    <form class="search" id="book-form" >
       <input type="text" placeholder="Enter your Book" aria-label="text-input" id="book-input">
-      <button type="submit" class="btn btn-outline-success fs-5 fw-bolder">Add</button>
+      <button type="submit" class="btn btn-outline-success  fs-5 fw-bolder" onclick="location.href='./readingLog.html'">Add</button>
     </form>
 </div>
 <div class="row2">
@@ -57,9 +52,19 @@
    
   </div>
 
-  <section id="displaySection" class="d-flex flex-roq flex-wrap p2 justify-content-md-evenly gap-3">
+  <section id="displaySection" class="d-flex flex-row flex-wrap justify-content-md-evenly gap-3 ">
 
   </section>
+  <!--Start footer section design-->
+    <footer class="footer d-flex bg-light mx-auto">
+        <div class="footer-text mx-auto mt-3">
+            <p>Copyright &copy; 2023 by Sornya Wells.</p>
+        </div>
+        <div class="footer-icon">
+            <a href="#home"><i class='bx bx-chevrons-up' ></i></a>
+        </div>
+    </footer>
+<!--End footer section design-->
    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
    <script src="index.js"></script>

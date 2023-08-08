@@ -8,13 +8,16 @@ function getbookList() {
     .catch((err) => console.log(err));
 }
 
+
 function removeBook(id) {
   axios.delete(`${baseURL}/api/books/${id}`)
-    .then((res) => bookList(res.data))
+    .then((res) => {
+      bookList(res.data)
+    }
+      )
     .catch((err) => console.log(err));
 }
 
-    
 getbookList()
 
 

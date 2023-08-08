@@ -42,7 +42,7 @@ module.exports = {
         where book_id = ${id}
         `)
             .then((dbRes) => {
-                console.log(dbRes[0])
+                console.log(`This book is deleted`)
                 res.status(200).send(dbRes[0])
             })
           .catch((err) => {

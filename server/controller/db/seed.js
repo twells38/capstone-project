@@ -17,8 +17,10 @@ module.exports = {
         drop table if exists book_list;
             create table book_List(
                 book_id serial primary key,
-                title varchar not null
-             )
+                title varchar not null,
+                createdAt timestamp NOT NULL 
+                DEFAULT CURRENT_TIMESTAMP
+            )
           `).then(() => {
               console.log(`database table in seed file`)
               res.sendStatus(200)
