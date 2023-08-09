@@ -15,12 +15,14 @@ const displayCard = (bookArr) => {
      let isbn = book.volumeInfo.industryIdentifiers[0].type +"-"+ book.volumeInfo.industryIdentifiers[0].identifier
      let image = book.volumeInfo.imageLinks&&book.volumeInfo.imageLinks.smallThumbnail
       displayDiv.innerHTML = `
-         <div class="card-body bg-light ">
+         <div class="card-body bg-light  ">
          <img class="bookImg"src=${image}>
-        <h5 class="card-title mt-3 fw-bold">${book.volumeInfo.title}</h5>
+        <div class=" mx-4">
+         <h5 class="card-title mt-3 fw-bold text-right">${book.volumeInfo.title}</h5>
         <h5>Author: ${book.volumeInfo.authors}</h5>
         <h5>${isbn}
         </div>
+       </div>
         `;
       display_Section.appendChild(displayDiv);
     });
@@ -35,7 +37,7 @@ const bookList = (bookArr) => {
       displayDiv.classList.add("card-log");
       displayDiv.style.width = "30rem";
       displayDiv.innerHTML = `
-     <div class="card-body  d-flex p-2 flex-row bg-light">
+     <div class="card-body d-flex p-2 flex-row bg-light">
          <div>
          <a href='./readingLog.html' onclick='removeBook(${book['book_id']})'class='pe-auto mx-3 ' > 
         <i class="fa-regular fa-trash-can "></i>

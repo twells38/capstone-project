@@ -8,7 +8,7 @@
     font-family: 'Raleway', sans-serif;
 }
 :root{
-    --primary-color: #9198e5;
+    --primary-color: #b3b8f3;
 ;
     --secondary-color: rgb(39, 34, 28);
 }
@@ -27,6 +27,7 @@ nav img{
     width: 35px;
    
 }
+
 .navbar li a{
     font-weight: 700;
     margin: 0 2rem;
@@ -102,6 +103,13 @@ nav img{
    margin: 5rem;;
     
 }
+.card-body{
+    box-shadow: 0px 0px 20px 0 #0c0c0c2c;
+    transition: 0.3s ease box-shadow;
+}
+.card-body:hover{
+   box-shadow: 0px 0px 10px 0 var(--primary-color);
+}
 
 
 .bookImg{
@@ -136,11 +144,14 @@ section #display-list{
 }
 
 .footer{
+    display: flex;
     position: fixed;
     right: 0;
     bottom: 0;
     left: 0;
     font-size: 1.1rem;
+    background-color:white ;
+
 }
 .footer-log{
    position: fixed;  
@@ -150,6 +161,18 @@ section #display-list{
     font-size: 1.2rem;
     background-color:white ;
 }
+.footer-icon a{
+    margin-right: 2rem;
+    position: relative;
+    top: 1.1rem;
+    background-color: var(--primary-color);
+    padding: 5px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+
+}
+
+
 
 
 
